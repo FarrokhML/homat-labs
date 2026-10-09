@@ -1,0 +1,159 @@
+{
+ "rows_raw": 3150,
+ "duplicates": 300,
+ "rows": 2850,
+ "churn_rate": 15.6,
+ "n_train": 2137,
+ "n_test": 713,
+ "test_churners": 112,
+ "churn_complained": 81.3,
+ "churn_not_complained": 9.9,
+ "churn_lowest_use_quintile": 36.4,
+ "churn_highest_use_quintile": 0.0,
+ "churn_status_active": 5.6,
+ "churn_status_inactive": 47.6,
+ "churners_who_complained": 41.6,
+ "churners_inactive": 72.8,
+ "figures": {
+  "churn-drivers": "نرخ ریزش مشتری‌های دارای شکایت در برابر بدون شکایت، و نرخ ریزش در پنج گروه مدت مکالمه",
+  "gain-curve": "منحنی پوشش: درصد مشتری‌های رونده که با تماس با درصد معینی از مشتری‌ها پیدا می‌شوند، برای مدل‌ها، قاعده‌ی ساده و انتخاب تصادفی",
+  "feature-importance": "اهمیت جایگشتی ستون‌ها در مدل گرادیان بوستینگ: افت PR-AUC وقتی هر ستون به‌هم ریخته شود"
+ },
+ "cv_pr_auc": {
+  "logistic": [
+   0.747,
+   0.065
+  ],
+  "boosting": [
+   0.94,
+   0.005
+  ]
+ },
+ "test_table": [
+  {
+   "model": "logistic",
+   "pr_auc": 0.777,
+   "roc_auc": 0.944,
+   "contacted": 71,
+   "caught": 55,
+   "precision_top10": 77.5,
+   "recall_top10": 49.1,
+   "lift": 4.93
+  },
+  {
+   "model": "boosting",
+   "pr_auc": 0.96,
+   "roc_auc": 0.99,
+   "contacted": 71,
+   "caught": 71,
+   "precision_top10": 100.0,
+   "recall_top10": 63.4,
+   "lift": 6.37
+  },
+  {
+   "model": "rule",
+   "pr_auc": 0.712,
+   "roc_auc": 0.882,
+   "contacted": 71,
+   "caught": 54,
+   "precision_top10": 76.1,
+   "recall_top10": 48.2,
+   "lift": 4.84
+  },
+  {
+   "model": "random",
+   "pr_auc": 0.157,
+   "roc_auc": 0.5,
+   "contacted": 71,
+   "caught": 11.2,
+   "precision_top10": 15.7,
+   "recall_top10": 10.0,
+   "lift": 1.0
+  }
+ ],
+ "rule_unranked": {
+  "flagged": 177,
+  "caught": 38,
+  "precision_top10": 53.5
+ },
+ "recall_at": {
+  "logistic": {
+   "10": 49.1,
+   "15": 66.1,
+   "20": 82.1,
+   "30": 92.9
+  },
+  "boosting": {
+   "10": 63.4,
+   "15": 84.8,
+   "20": 96.4,
+   "30": 99.1
+  },
+  "rule": {
+   "10": 48.2,
+   "15": 62.5,
+   "20": 69.6,
+   "30": 82.1
+  }
+ },
+ "top_features": [
+  [
+   "Complains",
+   0.206
+  ],
+  [
+   "Frequency of use",
+   0.194
+  ],
+  [
+   "Seconds of Use",
+   0.107
+  ],
+  [
+   "Call Failure",
+   0.104
+  ],
+  [
+   "Subscription Length",
+   0.089
+  ]
+ ],
+ "robust_all_features": {
+  "pr_auc": [
+   0.951,
+   0.014
+  ],
+  "precision_top10": [
+   98.0,
+   1.7
+  ],
+  "recall_top10": [
+   62.1,
+   1.1
+  ]
+ },
+ "robust_without_status_value": {
+  "pr_auc": [
+   0.941,
+   0.013
+  ],
+  "precision_top10": [
+   96.9,
+   1.9
+  ],
+  "recall_top10": [
+   61.4,
+   1.2
+  ]
+ },
+ "with_duplicates": {
+  "test_rows_with_twin_in_train": [
+   105.0,
+   788
+  ],
+  "pr_auc": [
+   0.952,
+   0.011
+  ]
+ }
+}
